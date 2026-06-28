@@ -27,6 +27,52 @@
             background-color: #ddd;
             color: black;
          }
+         .section{
+    text-align: center;
+    padding: 50px 80px;
+}
+.section-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+.img1{
+    background-image: url("image1.jpg");
+    min-height: 400px;
+}
+.img2{
+    background-image:url("image2.jpg") ;
+    min-height: 400px;
+}
+.img3{
+    background-image:url("image3.jpg");
+    min-height: 400px;
+}
+.img1,.img2,.img3{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.pText{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+.pText .border-trans{
+    background-color: transparent;
+}
+.pText .border{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
         </style>
     </head>
     <body>
@@ -41,22 +87,55 @@
             <img src="image2.jpg" alt="image2" class="mySlides" style="height: 500px; width: 1200px;">
             <img src="image3.jpg" alt="image3" class="mySlides" style="height: 500px; width: 1200px;">
         </section>
+         <section class="section section-dark">
+            <h2>The Satisfaction of Rainy Day</h2>
+            <p>Wrapped in grey skies, soft rain, and quiet moments, every drop 
+                tells a story. Rainy days aren't just weather - they're a feeling
+                of comfort and quiet nostalgia.
+            </p>
+        </section>
+        <div class="img1">
+            <div class="pText">
+                <span class="border-trans">Rain turs ordinay moments into quiet 
+                    memories. Cozy, calm and beautifully simple.
+                </span>
+            </div>
+        </div>
+         <section class="section section-dark">
+            <h2>Rainy nostalgia</h2>
+            <p>Some memories don't need photographs. They return with the first rain,
+                the smell of petrichor, and the silence between the falling drops.</p>
+        </section>
+        <div class="img2">
+            <div class="pText">
+                <span class="border-trans">When rain falls, the world feels lighter. Slow
+                    mornings, warm drinks, endless comfort.
+                </span>
+            </div>
+        </div>
+         <section class="section section-dark">
+            <h2>Comfort in Rain</h2>
+            <p>Close your eyes and let the rain write the soundtrack. 
+                 A cozy corner, a soft blanket, the scent of fresh rain, and a world
+                 that finally slows down. Sometimes, comfort isn't a place—
+                 it's a rainy afternoon.</p>
+        </section>
         <script>
-            var myIndex = 0
-            slider()
-                function slider() {
-                    var i
-                    var x = document.getElementsByClassName("mySlides")
-                    for(i=0;i<x.length;i++) {
-                        x[i].style.display = "none" 
-                    }
-                    myIndex++ 
-                    if(myIndex>x.length) {
-                        myIndex = 1
-                    }
-                    x[myIndex-1].style.display = "block"
-                    setTimeout(silder,3000) 
-                }
+            var myIndex=0
+carousel()
+function carousel(){
+    var i
+    var x=document.getElementsByClassName("mySlides")
+    for(i=0; i<x.length; i++){
+        x[i].style.display="none"
+    }
+    myIndex++
+    if(myIndex>x.length){
+        myIndex=1
+    }
+    x[myIndex-1].style.display="block"
+    setTimeout(carousel,3000)
+}
         </script>
     </body>
 </html>
